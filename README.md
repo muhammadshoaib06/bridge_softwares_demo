@@ -34,5 +34,5 @@ and Hive for storing cart items.
 1. Clone the repository:
 
 ```bash
-[git clone [https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME.git](https://github.com/muhammadshoaib06/bridge_softwares_demo)https://github.com/muhammadshoaib06/bridge_softwares_demo]
+[git clone [https://github.com/muhammadshoaib06/bridge_softwares_demo]
 
