@@ -1,7 +1,9 @@
 import 'package:bridge_softwares_demo/constants/api_constants.dart';
 import 'package:dio/dio.dart';
 
+/// API Services Class
 class ProductServices {
+  /// Dio Configuration
   final Dio _dio = Dio(
     BaseOptions(
       baseUrl: ApiConstants.baseUrl,
@@ -13,6 +15,7 @@ class ProductServices {
     ),
   );
 
+  /// Fetch Products
   fetchProduct() async {
     var response = await _dio.get(
         '/products/v2/list?store=US&categoryId=4209&limit=10&country=US&lang=en-US&q=');
@@ -20,6 +23,7 @@ class ProductServices {
     return response.data;
   }
 
+  /// Fetch Searched Products
   fetchProductBySearching(String productName) async {
     var response = await _dio.get(
         '/products/v2/list?store=US&categoryId=4209&limit=10&country=US&lang=en-US&q=$productName');

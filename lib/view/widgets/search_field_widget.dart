@@ -26,9 +26,13 @@ class SearchTextField extends ConsumerWidget {
           child: TextField(
             controller: searchController,
             onChanged: (value) {
+
+              /// If the value is not empty
+              /// then the value will send to the api for searching
               if (value.isNotEmpty) {
                 ref.read(productProvider.notifier).loadSearchedProduct(value);
               } else {
+                /// if empty then the default api will be hit.
                 ref.read(productProvider.notifier).loadProduct();
               }
             },

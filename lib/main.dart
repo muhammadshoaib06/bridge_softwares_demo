@@ -1,5 +1,5 @@
-import 'package:bridge_softwares_demo/services/hive_database.dart';
 import 'package:bridge_softwares_demo/models/cart_product_model.dart';
+import 'package:bridge_softwares_demo/services/hive_database.dart';
 import 'package:bridge_softwares_demo/view/starting_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,13 +16,17 @@ Future<void> main() async {
     ],
   );
 
+  /// Initialization of Hive Database
   await Hive.initFlutter();
   Hive.registerAdapter(CartProductModelAdapter());
+
+  /// Create a box for cart items
   HiveDatabase.cartProductsBox =
       await Hive.openBox<CartProductModel>('cartProductsBox');
 
   /// Run App
   runApp(
+    /// RiverPod Widget for globally access the Providers
     const ProviderScope(
       child: MyApp(),
     ),
@@ -50,7 +54,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           builder: (context, child) => MediaQuery.withClampedTextScaling(
             minScaleFactor: 1.0,
-            maxScaleFactor: 2.0,
+            maxScaleFactor: 1.0,
             child: child!,
           ),
           home: const SplashScreen(),

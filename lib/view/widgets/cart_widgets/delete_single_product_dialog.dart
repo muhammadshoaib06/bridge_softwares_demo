@@ -2,18 +2,19 @@ import 'package:bridge_softwares_demo/services/hive_database.dart';
 import 'package:bridge_softwares_demo/view/widgets/snackbar_widget.dart';
 import 'package:flutter/material.dart';
 
+/// A Confirmation dialog for the Deleting Item from the Cart
 Future<dynamic> showSingleDeleteCartProductDialog(
     BuildContext context, int index) async {
   return showDialog<void>(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Clear Cart!'),
-        content: Text('Are you sure you want to delete?'),
-        actions: <Widget>[
+        title: const Text('Delete Item!'),
+        content: const Text('Are you sure you want to delete?'),
+        actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           TextButton(
             onPressed: () {
@@ -24,7 +25,7 @@ Future<dynamic> showSingleDeleteCartProductDialog(
               );
               Navigator.of(context).pop();
             },
-            child: Text(
+            child: const Text(
               'Delete',
               style: TextStyle(color: Colors.red),
             ),

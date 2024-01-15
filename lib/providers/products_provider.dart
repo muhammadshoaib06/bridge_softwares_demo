@@ -71,6 +71,8 @@ class ProductNotifier extends StateNotifier<ProductState> {
     loadProduct();
   }
 
+  /// Here The api response will be get and a state will be implemented against
+  /// it response for the default api
   loadProduct() async {
     try {
       state = state.copyWith(isLoading: true);
@@ -83,6 +85,8 @@ class ProductNotifier extends StateNotifier<ProductState> {
     }
   }
 
+  /// Here The api response will be get and a state will be implemented against
+  /// it response for the search api
   loadSearchedProduct(String productName) async {
     try {
       state = state.copyWith(isLoading: true);

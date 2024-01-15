@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// in-app notifications for showing to user the messages in different states
+/// of the APP.
 showAppSnackBar({required BuildContext context, required String snackBarText}) {
   SnackBar snackBar = SnackBar(
     elevation: 5,

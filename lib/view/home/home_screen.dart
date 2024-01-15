@@ -49,6 +49,8 @@ class HomeScreen extends ConsumerWidget {
           ),
         ],
       ),
+
+      /// A Container in the Bottom Navigation for Cart Details Showing
       bottomNavigationBar: const BottomNavigationWidget(),
     );
   }

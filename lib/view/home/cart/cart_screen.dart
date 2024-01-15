@@ -1,6 +1,6 @@
 import 'package:bridge_softwares_demo/constants/app_colors.dart';
-import 'package:bridge_softwares_demo/services/hive_database.dart';
 import 'package:bridge_softwares_demo/models/cart_product_model.dart';
+import 'package:bridge_softwares_demo/services/hive_database.dart';
 import 'package:bridge_softwares_demo/view/widgets/cart_widgets/charge_button_widget.dart';
 import 'package:bridge_softwares_demo/view/widgets/cart_widgets/delete_single_product_dialog.dart';
 import 'package:bridge_softwares_demo/view/widgets/cart_widgets/empty_cart_dialog.dart';
@@ -110,6 +110,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     child: Row(
                       children: [
+                        /// Product Quantity
                         Expanded(
                           child: Container(
                             width: 34.sp,
@@ -130,6 +131,8 @@ class _CartScreenState extends State<CartScreen> {
                           ),
                         ),
                         SizedBox(width: 10.sp),
+
+                        /// Product Name
                         Expanded(
                           flex: 5,
                           child: Text(
@@ -141,6 +144,8 @@ class _CartScreenState extends State<CartScreen> {
                             ),
                           ),
                         ),
+
+                        /// Product Price
                         Expanded(
                           flex: 2,
                           child: Align(

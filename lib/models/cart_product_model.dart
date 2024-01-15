@@ -2,6 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'cart_product_model.g.dart';
 
+/// Cart Product Model
 @HiveType(typeId: 1)
 class CartProductModel {
   CartProductModel({

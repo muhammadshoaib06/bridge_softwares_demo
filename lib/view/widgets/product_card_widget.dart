@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Product Card Widget
 class ProductCardWidget extends StatefulWidget {
   const ProductCardWidget({
     super.key,
@@ -93,6 +94,7 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
             ),
           ),
 
+          /// Product Name
           Expanded(
             flex: 2,
             child: Align(
@@ -112,6 +114,7 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
             ),
           ),
 
+          /// Product Current Type
           Expanded(
             child: Center(
               child: Text(

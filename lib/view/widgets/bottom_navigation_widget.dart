@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
 
+/// Bottom Navigation Widget where the Cart Items details will be shown
 class BottomNavigationWidget extends ConsumerWidget {
   const BottomNavigationWidget({
     super.key,
@@ -26,7 +27,6 @@ class BottomNavigationWidget extends ConsumerWidget {
         builder: (context, box, _) {
           return Container(
             padding: EdgeInsets.symmetric(horizontal: 17.sp),
-            // margin: EdgeInsets.only(bottom: 10.sp),
             decoration: BoxDecoration(
               color: AppColors.whiteColor,
               border: Border.fromBorderSide(
@@ -53,6 +53,7 @@ class BottomNavigationWidget extends ConsumerWidget {
               ),
               child: Row(
                 children: [
+                  /// Shopping Cart Item
                   Expanded(
                     child: Align(
                       alignment: Alignment.center,
@@ -62,6 +63,8 @@ class BottomNavigationWidget extends ConsumerWidget {
                       ),
                     ),
                   ),
+
+                  /// Total Items Added In the Cart
                   Expanded(
                     flex: 3,
                     child: Align(
@@ -76,6 +79,8 @@ class BottomNavigationWidget extends ConsumerWidget {
                       ),
                     ),
                   ),
+
+                  /// SubTotal of the Cart Items.
                   Expanded(
                     flex: 2,
                     child: Align(

@@ -30,6 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
+        /// Animate the App LOGO
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 1200),
           curve: Curves.easeInOut,
@@ -37,6 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
           height: containerHeight,
           onEnd: () {
             debugPrint('When animation ends!');
+
+            /// After the animation ends it will redirect the user to the HomeScreen
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(

@@ -1,8 +1,8 @@
 import 'package:bridge_softwares_demo/constants/app_colors.dart';
 import 'package:bridge_softwares_demo/constants/app_images.dart';
-import 'package:bridge_softwares_demo/services/hive_database.dart';
 import 'package:bridge_softwares_demo/models/cart_product_model.dart';
 import 'package:bridge_softwares_demo/models/product_model.dart';
+import 'package:bridge_softwares_demo/services/hive_database.dart';
 import 'package:bridge_softwares_demo/view/home/cart/cart_screen.dart';
 import 'package:bridge_softwares_demo/view/widgets/snackbar_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Product Detail Screen
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key, required this.product});
 
@@ -37,6 +38,7 @@ class ProductDetailScreen extends StatelessWidget {
           ),
         ),
         actions: [
+          /// A Cart Icon for navigation to the Cart Screen
           Padding(
             padding: EdgeInsets.only(right: 10.sp),
             child: IconButton(
@@ -90,6 +92,7 @@ class ProductDetailScreen extends StatelessWidget {
           ),
           SizedBox(height: 20.sp),
 
+          /// Product Name
           Text(
             product.name,
             style: GoogleFonts.poppins(
@@ -101,8 +104,10 @@ class ProductDetailScreen extends StatelessWidget {
           ),
           SizedBox(height: 10.sp),
 
+          /// Product Brand & Product Currency Name
           Row(
             children: [
+              /// Product Brand
               Expanded(
                 child: Align(
                   alignment: Alignment.centerLeft,
@@ -117,6 +122,8 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
+              /// Product Currency Name
               Expanded(
                 child: Align(
                   alignment: Alignment.centerRight,
@@ -135,6 +142,7 @@ class ProductDetailScreen extends StatelessWidget {
           ),
           SizedBox(height: 20.sp),
 
+          /// Select Color Text
           Text(
             'Select Color:',
             style: GoogleFonts.poppins(
@@ -145,6 +153,7 @@ class ProductDetailScreen extends StatelessWidget {
           ),
           SizedBox(height: 5.sp),
 
+          /// Select Color for the Product
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
@@ -166,6 +175,7 @@ class ProductDetailScreen extends StatelessWidget {
                 ],
               ),
               child: Center(
+                /// Product Color
                 child: Text(
                   product.colour,
                   maxLines: 1,
@@ -182,6 +192,7 @@ class ProductDetailScreen extends StatelessWidget {
 
           SizedBox(height: 20.sp),
 
+          /// Price of the Product & Add to Cart Button
           Container(
             padding: const EdgeInsets.all(12),
             decoration: ShapeDecoration(
@@ -193,6 +204,7 @@ class ProductDetailScreen extends StatelessWidget {
             ),
             child: Row(
               children: [
+                /// Product Price
                 Expanded(
                   child: Align(
                     alignment: Alignment.centerLeft,
@@ -225,12 +237,16 @@ class ProductDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                /// Add to Cart Button
                 Expanded(
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: InkWell(
                       onTap: () {
                         debugPrint('Add to cart.');
+
+                        /// Here the Product will be added to the Local Database for Cart.
                         bool isAdded = HiveDatabase.cartProductsBox
                             .containsKey('key_${product.id}');
                         if (isAdded) {
